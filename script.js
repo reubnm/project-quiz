@@ -103,4 +103,26 @@ const questions = [
 
 // Add your code underneath this comment.
 
+const element = document.getElementById("question");
+const answer1 = document.getElementById("answer1");
+const answer2 = document.getElementById("answer2");
+const answer3 = document.getElementById("answer3");
+const answer4 = document.getElementById("answer4");
+
+let count = 0
+
+const select = document.getElementById("nz");
+ 
+select.addEventListener('click', function () {
+count++ 
+
+answer1.innerText = questions[count].options[0];
+
+answer2.innerText = questions[count].options[1];
+
+answer3.innerText = questions[count].options[2];
+
+answer4.innerText = questions[count].options[3];
+
+element.innerText = questions[count].question }) 
 
