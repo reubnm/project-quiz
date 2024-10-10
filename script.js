@@ -108,10 +108,9 @@ const answer1 = document.getElementById("answer1");
 const answer2 = document.getElementById("answer2");
 const answer3 = document.getElementById("answer3");
 const answer4 = document.getElementById("answer4");
-
 let count = 0
 
-const select = document.getElementById("nz");
+const select = document.getElementById("submit");
  
 select.addEventListener('click', function () {
 count++ 
@@ -126,3 +125,40 @@ answer4.innerText = questions[count].options[3];
 
 element.innerText = questions[count].question }) 
 
+
+// Get references to all four answer buttons and the submit button
+let button1 = document.getElementById('answer1');
+let button2 = document.getElementById('answer2');
+let button3 = document.getElementById('answer3');
+let button4 = document.getElementById('answer4');
+let submitButton = document.getElementById('submit');
+
+// Variable to hold the selected answer
+let selectedAnswer = null;
+
+// Function to handle answer selection
+function selectFirstAnswer(answer) {
+    selectedAnswer = answer; // Set the selected answer
+
+    // Set background color for all buttons
+    [button1, button2, button3, button4].forEach(button => {
+        button.style.backgroundColor = button === answer ? 'lightblue' : ''; // Highlight selected
+    });
+}
+
+// Add onClick handlers for each answer button
+button1.onclick = () => selectFirstAnswer(button1);
+button2.onclick = () => selectFirstAnswer(button2);
+button3.onclick = () => selectFirstAnswer(button3);
+button4.onclick = () => selectFirstAnswer(button4);
+
+// Function to handle submission
+function submitAnswer() {
+    if (selectedAnswer === null) {
+        alert('Please select an answer before submitting.'); // Alert if no answer selected
+    } else {
+        alert(`You selected: ${selectedAnswer.textContent}`); // Alert the selected answer
+    }
+}
+
+submitButton.onclick = submitAnswer;

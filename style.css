@@ -12,3 +12,16 @@
     cursor: pointer;
     border-radius: 16px;
   }
+
+  .button id="answer1">Click</button> {
+  .button id="answer2">Click</button>
+  .button id="answer3">Click</button>
+  .button id="answer4">Click</button>
+    }
+    
+.button:hover {
+  background-color: #04AA6D; /* Green */
+  color: white;
+}
+
+
